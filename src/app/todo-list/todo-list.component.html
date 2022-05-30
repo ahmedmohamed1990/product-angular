@@ -1,0 +1,31 @@
+<p>todo-list works!</p>
+<div><input type="text" placeholder="entre data" #todo >
+    <input class="btn btn-primary" type="button" value="add" (click)="add(todo)"></div>
+    <div>
+    <input id="s" type="text" placeholder="search" #datafilter>
+    <input class="btn btn-info"type="button" value="filter"(click)="filter(datafilter.value)">
+  </div>
+    <label class="mx-5" for="s"> todo list</label>
+    
+  <table class="table w-full">
+   
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+     
+      <tr *ngFor="let todo of filerto">
+        <td>{{ todo.name }}</td>
+        <td>
+          <button
+            class="btn btn-warning"
+            value="Delete"
+            (click)="delete(todo.id)"
+          >Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
